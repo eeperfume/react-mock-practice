@@ -1,0 +1,11 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx", // TS가 JSX 문법을 어떻게 JS로 변환할지 정하는 옵션
+    "esModuleInterop": true // CJS 모듈을 ESM 방식처럼 사용할 수 있게 하는 옵션
+  }
+}
