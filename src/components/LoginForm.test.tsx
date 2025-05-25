@@ -3,9 +3,7 @@ import LoginForm from "./LoginForm";
 
 describe("LoginForm", () => {
   test("성공적인 로그인 시 환영 메시지 출력", async () => {
-    const loginMock = jest.fn().mockResolvedValue(true);
-
-    render(<LoginForm login={loginMock} />);
+    render(<LoginForm />);
     fireEvent.change(screen.getByLabelText("아이디"), {
       target: { value: "user" },
     });
@@ -20,9 +18,7 @@ describe("LoginForm", () => {
   });
 
   test("로그인 실패 시 에러 메시지 출력", async () => {
-    const loginMock = jest.fn().mockResolvedValue(false);
-
-    render(<LoginForm login={loginMock} />);
+    render(<LoginForm />);
     fireEvent.change(screen.getByLabelText("아이디"), {
       target: { value: "wrong" },
     });
@@ -37,9 +33,7 @@ describe("LoginForm", () => {
   });
 
   test("API 오류 발생 시 예외 메시지 출력", async () => {
-    const loginMock = jest.fn().mockRejectedValue(new Error("500"));
-
-    render(<LoginForm login={loginMock} />);
+    render(<LoginForm />);
     fireEvent.change(screen.getByLabelText("아이디"), {
       target: { value: "user" },
     });

@@ -1,10 +1,7 @@
 import { useState } from "react";
+import { login } from "../services/login";
 
-type Props = {
-  login: (username: string, password: string) => Promise<boolean>;
-};
-
-export default function LoginForm({ login }: Props) {
+export default function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
